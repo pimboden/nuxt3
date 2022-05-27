@@ -3,12 +3,16 @@ interface CardProps{
     name:string
   };
 const props = defineProps<CardProps>()
+const emit = defineEmits(["remove"])
+const deleteName = () => {
+  emit("remove", props.name)
+}
 </script>
 <template>
 
  <div class="card">
       <h4>{{name}}</h4>
-      <p>x</p>
+      <p @click="deleteName">x</p>
       </div>
     </template>
 

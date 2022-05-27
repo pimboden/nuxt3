@@ -45,6 +45,9 @@ const findNames = () =>{
   const filteredNames = names.filter((x) => x.gender == options.gender && x.popularity == options.popularity && ( options.length ==Length.ALL ||  x.length == options.length))
   selectedNames.value = filteredNames.map(x => x.name);
 }
+const removeName =(name:string)=>{
+  selectedNames.value.splice(selectedNames.value.indexOf(name),1)
+}
 </script>
 
 <template>
@@ -56,7 +59,7 @@ const findNames = () =>{
       <button class="primary" @click="findNames">Find Names</button>
     </div>
     <div class="cards-container">
-      <cards-name v-for="name in selectedNames" :key="name" :name="name"></cards-name>
+      <cards-name v-for="name in selectedNames" :key="name" :name="name" @remove="removeName"></cards-name>
     </div>
     {{selectedNames}}
   </div>
