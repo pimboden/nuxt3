@@ -1,0 +1,16 @@
+<template> 
+<div class="ad-container">
+  <h1>Get the best restaurant guide</h1>
+  <button class="btn btn-primary btn-large">Get It</button>
+</div>
+</template>
+<style lang="scss" scoped>
+.ad-container{
+
+  margin: 10rem  0;
+  text-align: center;
+  font-size: 2rem;
+  background-color: rgba(103,103,231, 0.3);
+  padding: 3rem;
+}
+</style>
